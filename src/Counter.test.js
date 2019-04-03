@@ -4,7 +4,7 @@ import Counter from './Counter';
 import {shallow} from 'enzyme';
 import configureMockStore from 'redux-mock-store';
 import { incrementCounter } from './actions';
-import counterReducer from './reducer';
+import {counterReducer} from './reducer';
 
 describe('<Counter />', () => {
     describe('render()', () => {
@@ -30,8 +30,7 @@ describe('<Counter />', () => {
           { type: 'INCREMENT_COUNTER' },
         ]);
     })
-  });
-
+    
   it('applies the counter reducer for increment correctly', () => {
     // given
     const beforeState = {count: 0};
@@ -40,4 +39,6 @@ describe('<Counter />', () => {
     const afterState = counterReducer(beforeState, action);
     // then
     expect(afterState).toEqual({count: 0});
+  });
+
   });
